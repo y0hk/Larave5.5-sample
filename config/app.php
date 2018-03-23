@@ -98,7 +98,7 @@ return [
     |
     */
 
-//    'fallback_locale' => 'en',
+//    'fallback_locale' => 'en',CREATE DATABASE laravel55sample DEFAULT CHARACTER SET = UTF8MB4;
     'fallback_locale' => 'ja',
 
     /*
