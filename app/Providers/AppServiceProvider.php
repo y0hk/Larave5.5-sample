@@ -13,7 +13,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // Validator extension
+        \Validator::resolver(function($translator, $data, $rules, $messages, $customAttributes){
+            return new \App\Support\CustomValidator($translator, $data, $rules, $messages, $customAttributes);
+        });
     }
 
     /**
