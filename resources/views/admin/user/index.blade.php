@@ -15,6 +15,7 @@
     <tr>
         <td>{{ $user->name }}</td>
         <td>{{ $user->email }}</td>
+        {{--<td>{{ $user->messages()->count() }}</td>--}}
         <td>{{ $user->messages_count }}</td>
         <td><input type="button" class="del_btn" data-id="{{ $user->id }}" value="削除"></td>
     </tr>

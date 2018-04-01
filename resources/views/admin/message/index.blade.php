@@ -16,7 +16,7 @@
 @foreach($messages as $message)
     <tr>
         <td><a href="{{ route('admin.message.edit', $message->id) }}">変更</a></td>
-        <td>{{ $message->user->name }}</td>
+        <td>{{ $message->user->name or '' }}</td>
         <td>{{ $message->title }}</td>
         <td>{{ mb_strimwidth($message->content, 0, 50, '...') }}</td>
     </tr>

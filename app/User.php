@@ -35,4 +35,18 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Message');
     }
+
+    // ユーザー一覧取得
+    public static function getUserList()
+    {
+        return static::latest()->pluck('name', 'id');
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+        static::deleting(function($user){
+            $user->messages()->delete();
+        });
+    }
 }
